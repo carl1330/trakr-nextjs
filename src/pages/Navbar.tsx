@@ -1,7 +1,8 @@
-import {FaCog, FaRegPlusSquare, FaSignOutAlt, FaUserAlt, FaUserCog} from 'react-icons/fa'
+import {FaSignOutAlt, FaUserAlt, FaUserCog} from 'react-icons/fa'
 import type React from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import {AddHabitModal} from './TrakrComponents';
 
 export default function Navbar() {
     return(
@@ -10,24 +11,24 @@ export default function Navbar() {
                 trakr.
             </div>
             <div className='flex flex-row'>
-                <NavbarButton icon={<FaRegPlusSquare />}/>
+                <AddHabitModal />
                 <NavbarDropdown />
             </div>
         </div>
     );
 }
 
-const NavbarButton: React.FC<{
+export const NavbarButton: React.FC<{
     icon: JSX.Element;
     type?: string;
     onClick?: () => void;
 }> = (props) => {
     return (
-        <button className='hover:bg-[#D4D4D4] p-2 rounded-sm transition-all mx-2'>
+        <button onClick={props.onClick} className='hover:bg-[#D4D4D4] p-2 rounded-sm transition-all mx-2'>
             {props.icon}
         </button>
     )
-}
+} 
 
 const NavbarDropdown: React.FC<{
 
