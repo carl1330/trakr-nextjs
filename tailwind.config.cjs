@@ -11,7 +11,9 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@headlessui/tailwindcss')
+  ],
 };
 
 module.exports = config;
