@@ -2,7 +2,14 @@
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Roboto', 'sans-serif']
+    },
+    extend: {
+      spacing: {
+        'default-paddingx': '400px',
+      },
+    },
   },
   plugins: [],
 };
